@@ -45,7 +45,7 @@
     }
 }
 
-@include tablet {
+@include medium {
     .header__nav {
         flex-direction: row;
         &-logo-container {
@@ -82,7 +82,7 @@
     }
 }
 
-@include desktop {
+@include large {
     .header__nav {
         &-logo-container {
             margin-top: 0px;
