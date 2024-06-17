@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav {
+  font-family: "avenir-regular";
+  width: 100%;
+  height: 80px;
+  background-color: #323232;
+  color: #AFAFAF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav-logo-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.header__nav-image {
+  width: 7.5rem;
+  margin-bottom: 0.5rem;
+}
+.header__nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.header__nav-menu-item {
+  width: 50vw;
+  text-align: center;
+  border-bottom: 0.2125rem solid transparent;
+}
+.header__nav-menu-item-link {
+  text-decoration: none;
+  display: block;
+  padding-bottom: 0.44rem;
+}
+.header__nav-menu-item-link:hover {
+  border-bottom: 0.4125rem solid #FFFFFF;
+}
+.header__nav-menu-item #active {
+  color: #FFFFFF;
+  border-bottom: 0.4125rem solid #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav {
+    flex-direction: row;
+  }
+  .header__nav-logo-container {
+    margin-top: 0px;
+  }
+  .header__nav-image {
+    width: 7.5rem;
+    margin-bottom: 0rem;
+    margin-left: 1.5rem;
+  }
+  .header__nav-menu {
+    justify-content: left;
+    align-items: center;
+    margin-top: 0px;
+    height: 5rem;
+  }
+  .header__nav-menu-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 5rem;
+    width: 5rem;
+    border-bottom: unset;
+    margin-left: 3.5rem;
+  }
+  .header__nav-menu-item-link {
+    width: 5rem;
+    display: block;
+    margin-top: 0.7125rem;
+    padding-bottom: 1.4rem;
+    padding-top: 1.5rem;
+    border-bottom: 0.4125rem solid transparent;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__nav-logo-container {
+    margin-top: 0px;
+  }
+  .header__nav-image {
+    width: 7.5rem;
+    margin-bottom: 0rem;
+    margin-left: 11.25rem;
+    margin-right: 1.75rem;
+  }
+  .header__nav-menu {
+    justify-content: left;
+    margin-top: 0px;
+  }
+  .header__nav-menu-item {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    border-bottom: unset;
+  }
+  .header__nav-menu-item-link {
+    border-bottom: 0.4125rem solid transparent;
+  }
+}/*# sourceMappingURL=main.css.map */
