@@ -160,3 +160,49 @@ h3 {
       padding-left: 4rem;
     }
   }
+  .shows {
+    padding: 2rem 1rem;
+  }
+  .shows__top {
+    display: none;
+  }
+  .shows__title {
+    color: #323232;
+    padding-bottom: 1rem;
+    font-family: "avenir-bold";
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .shows__new {
+    padding: 1.5rem 0 1rem 0;
+    border-bottom: 1px solid #E1E1E1;
+    display: flex;
+    flex-direction: column;
+  }
+  .shows__date, .shows__venue, .shows__location {
+    color: #AFAFAF;
+    padding-bottom: 1rem;
+    font-family: "avenir-regular";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+  .shows__date-actual, .shows__venue-actual, .shows__location-actual {
+    padding-bottom: 1.5rem;
+    color: #323232;
+  }
+  .shows__date-actual {
+    font-family: "avenir-demi";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .shows__venue-actual {
+    font-family: "avenir-regular";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+  .shows__location-actual {
+    font-family: "avenir-regular";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    padding-bottom: 2rem;
+  }
