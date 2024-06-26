@@ -1,12 +1,12 @@
 // Mixin for tablet (min-width: 768px and max-width: 1279px)
-@mixin medium {
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
+@mixin tablet {
+    @media screen and (min-width: 768px){
         @content;
     }
 }
 
 // Mixin for desktop (min-width: 1280px)
-@mixin large {
+@mixin desktop {
     @media screen and (min-width: 1280px) {
         @content;
     }
