@@ -1,9 +1,10 @@
-@use './partials/colors';
-@use './partials/fonts';
-@use './partials/breakpoints';
-@use './partials/navbar';
-@use './partials/hero-shows';
-@use './partials/footer';
+@import './partials/colors';
+@import './partials/fonts';
+@import './partials/breakpoints';
+@import './partials/navbar';
+@import './partials/hero-shows';
+@import './partials/footer';
+
 * {
     margin: 0;
     padding: 0;
