@@ -1,0 +1,422 @@
+@use 'partials/colors' as *;
+@use 'partials/fonts' as *;
+@use 'partials/main' as *;
+@use './partials/breakpoints' as *;
+
+
+.hero{
+    background-image:url(/Assets/Images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color:rgba(50,50,50,.5);
+    height: 20rem;
+    width: 100%;
+    position: relative;
+
+    &__title{
+        font-family: avenir-demi;
+        color: $white;
+        font-size: 2.25rem;
+        padding-left: 1rem;
+        position: relative;
+        top: 8rem;
+    }
+}
+
+@include tablet{
+    .hero{
+        height: 30rem;
+        width: 100%;
+        position: relative;
+
+        &__title{
+            font-family: avenir-demi;
+            color: $white;
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            padding-left: 2.25rem;
+            position: relative;
+            top: 11rem;
+            
+        }
+    }
+}
+
+@include desktop {
+    .hero__title{
+        padding-left: 7.5rem;
+    }
+}
+
+.biography{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    &__title{
+        font-family: avenir-demi;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        padding: 1.5rem 0 1rem ;
+    }
+
+    &__image{
+        padding-bottom: 1rem;
+        
+    } 
+
+    &__name{
+        padding-bottom: 1rem;
+        font-family: avenir-regular;
+        line-height: 1.375rem;
+        
+    }
+}
+
+
+
+.biography__quote{
+        font-family: avenir-demi;
+        font-size: .8125rem;
+        padding-bottom: 1rem;
+        line-height: 1.375rem;
+        color: $black;
+
+        &--person{
+            font-family: avenir-demi;
+            font-size: .8125rem;
+            padding-bottom: 1.5rem;
+            line-height: 1.125rem;
+            color: $black;
+        }
+    }
+
+.biography__text{
+    font-family: avenir-regular;
+    line-height: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    font-size: .8125rem;
+    color: $black;
+
+    &--space{
+        padding-bottom: 1rem;
+    }
+}
+@include tablet {
+    .biography{
+        display: flex;
+        padding: 0 2.25rem;
+
+        &__title{
+            font-family: avenir-demi;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            padding: 3rem 0 2.25rem ;
+        }
+
+        &__image{
+            padding:0 2.25rem 2.25rem
+        } 
+
+        &__name{
+            padding:0 2.25rem 1.5rem;
+            font-family: avenir-demi;
+            line-height: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+    
+    .biography__quote{
+        font-family: avenir-demi;
+        font-size: 1.5rem;
+        padding: 0 2.25rem 1rem;
+        line-height: 1.75rem;
+
+        &--person{
+            font-family: avenir-demi;
+            font-size: .875rem;
+            padding:0 2.25rem 2.25rem;
+        }
+    }
+    
+    .biography__text{
+        font-family: avenir-regular;
+        line-height: 1.375rem;
+        display: flex;
+        flex-direction: row;
+        padding:0 2.25rem 2.25rem;
+        font-size: .875rem;
+
+        &--space{
+            padding-right: 1.12rem;
+        }
+
+        &--space-left{
+            padding-left: 1.13rem;
+        }
+    }
+    }
+    
+@include desktop {
+    .biography{
+        padding: 0 7.5rem;
+
+        &__image{
+            padding:0 4rem 2.25rem;   
+        }
+
+        &__text{
+            padding: 0 4rem 2.25rem;
+        }
+    
+        &__name{
+            padding: 0 4rem 1.5rem;
+        }
+    }
+
+    .biography__quote{
+        padding: 0 4rem 1rem;
+        max-width: 80%;
+
+        &--person{
+            padding: 0 4rem 2.25rem;
+        }
+    }
+}
+
+.image-container{
+    background-color: $alabaster;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    &__title{
+        padding:1.5rem 0 1rem 0;
+        font-family: avenir-demi;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: $black;
+    }
+}
+
+.image{
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+@include tablet{
+    
+.image-container{
+    background-color: $alabaster;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.25rem;
+
+    &__title{
+        padding:1.5rem 0 2.25rem 0;
+        font-family: avenir-demi;
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+}
+
+.image{
+    margin-bottom: 2.25rem;
+    max-width: 31%;
+}
+
+.pic-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+}
+
+@include desktop {
+    .image-container{
+        padding: 0 7.5rem;
+    }
+}
+
+.comments{
+    padding: 1.5rem 1rem 1rem;
+    position: relative;
+
+    &__avatar{
+        vertical-align:middle;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 5rem;
+        left: 1rem;
+}
+    &__title{
+        font-family: avenir-demi;
+        line-height: 2.25rem;
+        font-size: 1.5rem; 
+        padding-bottom: .5rem;   
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        padding-left: 3.5rem;
+        
+        &--name{
+            height: 2.25rem;
+            border-radius: .25rem;
+            margin-bottom: 1rem;
+            border-color: $mercury;  
+            background-color: $alabaster; 
+            border: 1px solid $mercury;
+            }
+        &--name:active{
+            border-color: $black;
+        }
+
+        &--comment{
+            height: 2.25rem;
+            border-radius: .25rem;
+            margin-bottom: 1rem;
+            border-color: $mercury;
+            background-color: $alabaster ;
+            border: 1px solid $mercury;
+            padding-top: 1.25rem;
+            padding-bottom: 3.125rem;
+        }
+        &--comment:active{
+            border-color: $black;
+        }
+
+        &--labels{
+            font-size: .8125rem;
+            font-family: avenir-demi;
+            color: $mercury;
+            padding-bottom: .5rem;  
+        }
+    
+             &--button{
+                background-color: $black;
+                color: $white;
+                padding: .75rem;
+                border-radius: .25rem;
+                line-height: 1.25rem;
+                margin-bottom: 1rem;
+                border: 0px;
+
+            }
+                &--button:hover{
+                    background-color: $dark-black;
+                }
+        }
+    }
+
+    @include tablet {
+        .comments{
+            padding: 1.5rem 2.25rem 1.5rem;
+        }
+        .comments__title{
+            font-size: 2.25rem;
+            padding-bottom: 2.25rem;
+        }
+        .comments__avatar{
+            width: 3rem;
+            height: 3rem;
+            left: 4rem;
+            top: 7rem;
+        }
+        .comments__textbox{
+            width: 80%;
+            padding-left: 7rem;
+            
+        }
+        .comments__textbox--button{
+            width:30%;
+            margin-left: 70%;
+        }
+    }
+@include desktop {
+        .comments{
+            padding:1.5rem 7.5rem;
+        }
+        .comments__avatar{
+            left: 23rem;
+        }
+        .comments__textbox{
+            width: 70%;
+            padding-left: 20rem;
+        }
+}
+
+.post{
+    display: flex;
+    color: $black;
+    
+    &__items{
+        list-style-type: none;
+    padding: 0;
+    }
+    &__list-items{
+        border-bottom: 1px solid $mercury;
+        padding-top: 1rem;
+        padding-left: 3.5rem;
+        position: relative;
+    }
+    &__list-items--top{
+        border-bottom: 1px solid $mercury;
+        border-top: 1px solid $mercury;
+        padding-top: 1rem;
+        padding-left: 3.5rem;
+        position: relative;
+    }
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        font-family: avenir-demi;
+        font-size: .875rem;
+    }
+    &__header--date{
+        color: $mercury;
+        font-family: avenir-regular;
+    }
+    &__comment{
+        font-family: avenir-regular;
+        padding-top: 1rem;
+        font-size: .8125rem;
+        padding-bottom: 1rem;
+    }
+    &__avatar{
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background-color: $mercury;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+}
+    }
+    
+
+
+@include tablet {
+    .post{
+        width: 80%;
+        padding-left: 7rem;
+        
+        &__avatar{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
+
+@include desktop {
+    .post{
+        padding-left: 16rem;
+        width: 70%;
+    }
+}

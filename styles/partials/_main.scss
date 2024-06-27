@@ -1,5 +1,5 @@
 @use './colors' as *;
-@use './mixins' as *;
+@use './breakpoints' as *;
 @use './fonts' as *;
 *{
     box-sizing: border-box;   

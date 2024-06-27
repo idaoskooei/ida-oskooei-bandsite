@@ -1,0 +1,571 @@
+@font-face {
+    font-family: avenir-regular;
+    src: url(/assets/Font/AvenirNextLTPro-Regular.otf);
+  }
+  @font-face {
+    font-family: avenir-bold;
+    src: url(/assets/Font/AvenirNextLTPro-Bold.otf);
+  }
+  @font-face {
+    font-family: avenir-demi;
+    src: url(/assets/Font/AvenirNextLTPro-Demi.otf);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body, h1, h2, h3, p {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #e1e1e1;
+  }
+  
+  .menu {
+    background-color: #323232;
+  }
+  .menu__logo {
+    width: 7.5rem;
+    padding-top: 1rem;
+    display: block;
+    margin: auto;
+  }
+  
+  .nav__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+    color: #e1e1e1;
+    font-family: avenir-regular;
+    font-size: 0.875rem;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 0px;
+  }
+  
+  .nav__listlink {
+    color: #ffffff;
+  }
+  
+  .nav__list-link-item {
+    text-align: center;
+    width: 50%;
+  }
+  .nav__list-link-item--active {
+    border-bottom: 5px solid #fff;
+    padding-bottom: 1rem;
+  }
+  
+  .nav__list-link-item:hover {
+    border-bottom: 5px solid #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .menu {
+      background-color: #323232;
+      display: flex;
+      align-items: center;
+      padding: 0 2.25rem;
+    }
+    .menu__logo {
+      width: 7.5rem;
+      padding-top: 0;
+      margin-right: 4rem;
+    }
+  
+    .nav__list {
+      padding: 1rem 0rem 0rem;
+    }
+  
+    .nav__list-link-item {
+      padding-top: 0.25rem;
+      margin-right: 2.25rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .menu {
+      padding: 0rem 7.5rem;
+    }
+    .menu__logo {
+      margin-right: 2.5rem;
+    }
+  }
+  .footer {
+    background-color: #323232;
+    color: #ffffff;
+    padding: 1rem;
+  }
+  .footer__title {
+    padding-bottom: 1rem;
+    font-family: avenir-demi;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .footer__logo {
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+  .footer__band-logo {
+    padding: 2rem 0 1rem;
+  }
+  .footer__copyright {
+    font-family: avenir-regular;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+  
+  .footer__contact-container {
+    font-family: avenir-regular;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+  .footer__contact-container--agents {
+    padding-bottom: 1rem;
+  }
+  .footer__contact-container--demi {
+    font-family: avenir-demi;
+  }
+  
+  @media (min-width: 768px) {
+    .footer {
+      background-color: #323232;
+      color: #ffffff;
+      padding: 2.25rem;
+      position: relative;
+    }
+    .footer__title {
+      padding-bottom: 2.25rem;
+      font-family: avenir-demi;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+      padding-right: 1.5rem;
+    }
+    .footer__band-logo {
+      padding: 2rem 0 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 2.25rem;
+    }
+    .footer__copyright {
+      font-family: avenir-regular;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+    }
+    .footer .footer__logo {
+      padding-bottom: 1.5rem;
+      padding-left: 0.5rem;
+    }
+  
+    .footer__logo-container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .footer__contact-container {
+      font-family: avenir-regular;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+      display: flex;
+    }
+    .footer__contact-container--agents {
+      padding-bottom: 2.25rem;
+      padding-right: 2.25rem;
+    }
+    .footer__contact-container--demi {
+      font-family: avenir-demi;
+    }
+  }
+  @media (min-width: 1280px) {
+    .footer {
+      padding: 2.25rem 7.5rem;
+    }
+    .footer__band-logo {
+      right: 7.5rem;
+    }
+  
+    .footer__contact-container--agents {
+      padding-right: 3.93rem;
+    }
+  }
+  .hero {
+    background-image: url(/assets/Images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(50, 50, 50, 0.5);
+    height: 20rem;
+    width: 100%;
+    position: relative;
+  }
+  .hero__title {
+    font-family: avenir-demi;
+    color: #ffffff;
+    font-size: 2.25rem;
+    padding-left: 1rem;
+    position: relative;
+    top: 8rem;
+  }
+  
+  @media (min-width: 768px) {
+    .hero {
+      height: 30rem;
+      width: 100%;
+      position: relative;
+    }
+    .hero__title {
+      font-family: avenir-demi;
+      color: #ffffff;
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+      padding-left: 2.25rem;
+      position: relative;
+      top: 11rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .hero__title {
+      padding-left: 7.5rem;
+    }
+  }
+  .biography {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .biography__title {
+    font-family: avenir-demi;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    padding: 1.5rem 0 1rem;
+  }
+  .biography__image {
+    padding-bottom: 1rem;
+  }
+  .biography__name {
+    padding-bottom: 1rem;
+    font-family: avenir-regular;
+    line-height: 1.375rem;
+  }
+  
+  .biography__quote {
+    font-family: avenir-demi;
+    font-size: 0.8125rem;
+    padding-bottom: 1rem;
+    line-height: 1.375rem;
+    color: #323232;
+  }
+  .biography__quote--person {
+    font-family: avenir-demi;
+    font-size: 0.8125rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.125rem;
+    color: #323232;
+  }
+  
+  .biography__text {
+    font-family: avenir-regular;
+    line-height: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    font-size: 0.8125rem;
+    color: #323232;
+  }
+  .biography__text--space {
+    padding-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .biography {
+      display: flex;
+      padding: 0 2.25rem;
+    }
+    .biography__title {
+      font-family: avenir-demi;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+      padding: 3rem 0 2.25rem;
+    }
+    .biography__image {
+      padding: 0 2.25rem 2.25rem;
+    }
+    .biography__name {
+      padding: 0 2.25rem 1.5rem;
+      font-family: avenir-demi;
+      line-height: 2rem;
+      font-size: 1.5rem;
+    }
+  
+    .biography__quote {
+      font-family: avenir-demi;
+      font-size: 1.5rem;
+      padding: 0 2.25rem 1rem;
+      line-height: 1.75rem;
+    }
+    .biography__quote--person {
+      font-family: avenir-demi;
+      font-size: 0.875rem;
+      padding: 0 2.25rem 2.25rem;
+    }
+  
+    .biography__text {
+      font-family: avenir-regular;
+      line-height: 1.375rem;
+      display: flex;
+      flex-direction: row;
+      padding: 0 2.25rem 2.25rem;
+      font-size: 0.875rem;
+    }
+    .biography__text--space {
+      padding-right: 1.12rem;
+    }
+    .biography__text--space-left {
+      padding-left: 1.13rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .biography {
+      padding: 0 7.5rem;
+    }
+    .biography__image {
+      padding: 0 4rem 2.25rem;
+    }
+    .biography__text {
+      padding: 0 4rem 2.25rem;
+    }
+    .biography__name {
+      padding: 0 4rem 1.5rem;
+    }
+  
+    .biography__quote {
+      padding: 0 4rem 1rem;
+      max-width: 80%;
+    }
+    .biography__quote--person {
+      padding: 0 4rem 2.25rem;
+    }
+  }
+  .image-container {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .image-container__title {
+    padding: 1.5rem 0 1rem 0;
+    font-family: avenir-demi;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    color: #323232;
+  }
+  
+  .image {
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .image-container {
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      padding: 0 2.25rem;
+    }
+    .image-container__title {
+      padding: 1.5rem 0 2.25rem 0;
+      font-family: avenir-demi;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  
+    .image {
+      margin-bottom: 2.25rem;
+      max-width: 31%;
+    }
+  
+    .pic-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  @media (min-width: 1280px) {
+    .image-container {
+      padding: 0 7.5rem;
+    }
+  }
+  .comments {
+    padding: 1.5rem 1rem 1rem;
+    position: relative;
+  }
+  .comments__avatar {
+    vertical-align: middle;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+  }
+  .comments__title {
+    font-family: avenir-demi;
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .comments__textbox {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3.5rem;
+  }
+  .comments__textbox--name {
+    height: 2.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border-color: #e1e1e1;
+    background-color: #fafafa;
+    border: 1px solid #e1e1e1;
+  }
+  .comments__textbox--name:active {
+    border-color: #323232;
+  }
+  .comments__textbox--comment {
+    height: 2.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border-color: #e1e1e1;
+    background-color: #fafafa;
+    border: 1px solid #e1e1e1;
+    padding-top: 1.25rem;
+    padding-bottom: 3.125rem;
+  }
+  .comments__textbox--comment:active {
+    border-color: #323232;
+  }
+  .comments__textbox--labels {
+    font-size: 0.8125rem;
+    font-family: avenir-demi;
+    color: #e1e1e1;
+    padding-bottom: 0.5rem;
+  }
+  .comments__textbox--button {
+    background-color: #323232;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+    border: 0px;
+  }
+  .comments__textbox--button:hover {
+    background-color: #000000;
+  }
+  
+  @media (min-width: 768px) {
+    .comments {
+      padding: 1.5rem 2.25rem 1.5rem;
+    }
+  
+    .comments__title {
+      font-size: 2.25rem;
+      padding-bottom: 2.25rem;
+    }
+  
+    .comments__avatar {
+      width: 3rem;
+      height: 3rem;
+      left: 4rem;
+      top: 7rem;
+    }
+  
+    .comments__textbox {
+      width: 80%;
+      padding-left: 7rem;
+    }
+  
+    .comments__textbox--button {
+      width: 30%;
+      margin-left: 70%;
+    }
+  }
+  @media (min-width: 1280px) {
+    .comments {
+      padding: 1.5rem 7.5rem;
+    }
+  
+    .comments__avatar {
+      left: 23rem;
+    }
+  
+    .comments__textbox {
+      width: 70%;
+      padding-left: 20rem;
+    }
+  }
+  .post {
+    display: flex;
+    color: #323232;
+  }
+  .post__items {
+    list-style-type: none;
+    padding: 0;
+  }
+  .post__list-items {
+    border-bottom: 1px solid #e1e1e1;
+    padding-top: 1rem;
+    padding-left: 3.5rem;
+    position: relative;
+  }
+  .post__list-items--top {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 1rem;
+    padding-left: 3.5rem;
+    position: relative;
+  }
+  .post__header {
+    display: flex;
+    justify-content: space-between;
+    font-family: avenir-demi;
+    font-size: 0.875rem;
+  }
+  .post__header--date {
+    color: #e1e1e1;
+    font-family: avenir-regular;
+  }
+  .post__comment {
+    font-family: avenir-regular;
+    padding-top: 1rem;
+    font-size: 0.8125rem;
+    padding-bottom: 1rem;
+  }
+  .post__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .post {
+      width: 80%;
+      padding-left: 7rem;
+    }
+    .post__avatar {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .post {
+      padding-left: 16rem;
+      width: 70%;
+    }
+  }/*# sourceMappingURL=bio.css.map */

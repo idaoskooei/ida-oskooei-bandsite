@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Band Site</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <link href="/styles/bio.css" rel="stylesheet">
+    <link href="./styles/main.css"  rel="stylesheet">
 </head>
 <body>
     <!--Navbar -->
-    <header class="header">
-        <nav class="menu">
-            <a href="index.html"> <img class="menu__logo" src="assets/Logo/Logo-bandsite.svg" alt="bandsite logo"></a>
-                <div class="nav">
-            <ul class="nav__list">
-                <li class="nav__list-link-item nav__list-link-item--active"><a class="nav__listlink" href="/index.html">Biography</a></li>
-                <li class="nav__list-link-item"><a class="nav__listlink" href="/pages/shows.html">Shows</a></li>
-            </ul>
-        </div>
-    </nav>
-    </header>
-    <main>
+    <nav class="menu">
+        <a href="index.html"> <img class="menu__logo" src="Assets/Logo/Logo-bandsite.svg" alt="bandsite logo"></a>
+            <div class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-link-item nav__list-link-item--active"><a class="nav__listlink" href="/index.html">Biography</a></li>
+            <li class="nav__list-link-item"><a class="nav__listlink" href="/pages/shows.html">Shows</a></li>
+        </ul>
+    </div>
+</nav>
         <!--Hero  -->
         <section class="hero">
             <div class="hero__container">
@@ -65,7 +64,21 @@
             <img class="image" src="/assets/Images/Photo-gallery-9.jpg" alt="concert picture 9">
         </div>
         </section>
-    </main>
+        <section class="comments">
+            <h2 class="comments__title">Join the Conversation</h2>
+            <form class="comments__textbox">
+                <label for="name" class="comments__textbox--labels">NAME</label>
+                <input class="comments__textbox--name" id="name" type="text" name="nameText" placeholder="Enter your name" required>
+                <label for="comment" class="comments__textbox--labels">COMMENT</label>
+                <input class="comments__textbox--comment" id="comment" type="text" name="commentText" placeholder="Add a new comment" required>
+                <button type="submit" class="comments__textbox--button">COMMENT</button>
+            </form>
+            <div class="post">
+                <ul class="post__items">
+                </ul>
+            </div>
+            <img src="/assets/Images/Mohan-muruge.jpg" alt="avatar" class="comments__avatar">
+        </section>
     <!--Footer -->
     <footer class="footer">
         <div class="footer__logo-container">
