@@ -3,7 +3,6 @@ const commentArray = [
         name: "Victor Pinto",
         date: "11/02/2023",
         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-
     },
 
     {
@@ -21,38 +20,42 @@ const commentArray = [
 
 const commentList = document.querySelector(".post__items");
 
-function displayComments(comment) {
-    let listItem = document.createElement("li");
-    listItem.classList.add("post__list-items", "post__list-items--top");
+function displayComments(commentArray) {
+    commentList.innerHTML = '';
 
-    let postHeader = document.createElement("div");
-    postHeader.classList.add("post__header");
+    commentArray.forEach(comment => {
+        let listItem = document.createElement("li");
+        listItem.classList.add("post__list-items", "post__list-items--top");
 
-    let headName = document.createElement("h3");
-    headName.innerText = comment.name;
+        let postHeader = document.createElement("div");
+        postHeader.classList.add("post__header");
 
-    let headDate = document.createElement("p");
-    headDate.classList.add("post__header--date");
-    headDate.innerText = formatTimeAgo(comment.date);
+        let headName = document.createElement("h3");
+        headName.innerText = comment.name;
 
-    let text = document.createElement("p");
-    text.classList.add("post__comment");
-    text.innerText = comment.comment;
+        let headDate = document.createElement("p");
+        headDate.classList.add("post__header--date");
+        headDate.innerText = formatTimeAgo(comment.date);
 
-    let avatar = document.createElement("img");
-    avatar.classList.add("post__avatar");
+        let text = document.createElement("p");
+        text.classList.add("post__comment");
+        text.innerText = comment.comment;
 
-    listItem.appendChild(postHeader);
-    postHeader.appendChild(headName);
-    postHeader.appendChild(headDate);
-    listItem.appendChild(text);
-    listItem.appendChild(avatar);
+        let avatar = document.createElement("img");
+        avatar.classList.add("post__avatar");
 
-    commentList.prepend(listItem);
+        listItem.appendChild(postHeader);
+        postHeader.appendChild(headName);
+        postHeader.appendChild(headDate);
+        listItem.appendChild(text);
+        listItem.appendChild(avatar);
+
+        commentList.appendChild(listItem);
+    });
 }
 
 // Display initial comments
-commentArray.forEach(comment => displayComments(comment));
+displayComments(commentArray);
 
 function formatTimeAgo(dateString) {
     const datePosted = new Date(dateString);
@@ -87,13 +90,11 @@ formCta.addEventListener("submit", (e) => {
         const newComment = {
             name: nameText,
             comment: commentText,
-            date: currentDate 
+            date: currentDate
         };
 
         commentArray.unshift(newComment);
-
-        // Display the new comment at the top
-        displayComments(newComment);
+        displayComments(commentArray);
     }
 
     e.target.nameText.value = "";
