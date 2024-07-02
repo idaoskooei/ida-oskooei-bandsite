@@ -18,7 +18,7 @@ const commentArray = [
         date: "10/20/2023",
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough"
     },
-]
+];
 
 const commentList = document.querySelector(".post__items")
 
@@ -59,7 +59,6 @@ displayComments(commentArray);
 
 let formCta = document.querySelector(".comments__textbox")
 
-
 formCta.addEventListener("submit", (e) =>{
     e.preventDefault();
 
@@ -67,13 +66,14 @@ formCta.addEventListener("submit", (e) =>{
     let commentText = e.target.commentText.value;
 
     if (nameText && commentText){
+        const currentDate = new Date();
         commentList.innerText = "";
         commentArray.unshift({
             name: nameText,
             comment: commentText,
-            date:"02/14/2022"
+            date: currentDate
         });
-        for(i = 0; i < commentArray.length; i=i+1){
+        for(i = 0; i < commentArray.length; i++){
             displayComments(commentArray);
         }
     }
@@ -81,3 +81,23 @@ formCta.addEventListener("submit", (e) =>{
     document.querySelector(".comments__textbox--comment").value = "";
 }
 )
+
+function formatTimeAgo(dateString) {
+    const datePosted = new Date(dateString);
+    const currentDate = new Date();
+    const timeDifference = currentDate.getTime() - datePosted.getTime();
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) {
+        return `${days} day${days > 1 ? 's' : ''} ago`;
+    } else if (hours > 0) {
+        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    } else if (minutes > 0) {
+        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    } else {
+        return `${seconds} second${seconds !== 1 ? 's' : ''} ago`;
+    }
+}
