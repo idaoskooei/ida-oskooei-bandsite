@@ -10,7 +10,6 @@ const commentArray = [
         name: "Christina Cabrera",
         date: "10/28/2023",
         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-
     },
 
     {
@@ -20,67 +19,40 @@ const commentArray = [
     },
 ];
 
-const commentList = document.querySelector(".post__items")
+const commentList = document.querySelector(".post__items");
 
-function displayComments(commentArray) {
-    for (i = 0; i < commentArray.length; i++){
+function displayComments(comment) {
+    let listItem = document.createElement("li");
+    listItem.classList.add("post__list-items", "post__list-items--top");
 
-        let listItems = document.createElement("li");
-        listItems.classList.add("post__list-items", "post__list-items--top");
+    let postHeader = document.createElement("div");
+    postHeader.classList.add("post__header");
 
-        let postHeader = document.createElement("div");
-        postHeader.classList.add("post__header");
+    let headName = document.createElement("h3");
+    headName.innerText = comment.name;
 
-        let headName = document.createElement("h3");
-        headName.innerText = commentArray[i].name;
+    let headDate = document.createElement("p");
+    headDate.classList.add("post__header--date");
+    headDate.innerText = formatTimeAgo(comment.date);
 
-        let headDate = document.createElement("p");
-        headDate.classList.add("post__header--date");
-        headDate.innerText = commentArray[i].date;
+    let text = document.createElement("p");
+    text.classList.add("post__comment");
+    text.innerText = comment.comment;
 
-        let text = document.createElement("p");
-        text.classList.add("post__comment");
-        text.innerText = commentArray[i].comment;
+    let avatar = document.createElement("img");
+    avatar.classList.add("post__avatar");
 
-        let avatar = document.createElement("img");
-        avatar.classList.add("post__avatar");
+    listItem.appendChild(postHeader);
+    postHeader.appendChild(headName);
+    postHeader.appendChild(headDate);
+    listItem.appendChild(text);
+    listItem.appendChild(avatar);
 
-
-        commentList.appendChild(listItems);
-        listItems.appendChild(postHeader);
-        postHeader.appendChild(headName);
-        postHeader.appendChild(headDate);
-        listItems.appendChild(text);
-        listItems.appendChild(avatar);
-    }
+    commentList.prepend(listItem);
 }
 
-displayComments(commentArray);
-
-let formCta = document.querySelector(".comments__textbox")
-
-formCta.addEventListener("submit", (e) =>{
-    e.preventDefault();
-
-    let nameText = e.target.nameText.value;
-    let commentText = e.target.commentText.value;
-
-    if (nameText && commentText){
-        const currentDate = new Date();
-        commentList.innerText = "";
-        commentArray.unshift({
-            name: nameText,
-            comment: commentText,
-            date: currentDate
-        });
-        for(i = 0; i < commentArray.length; i++){
-            displayComments(commentArray);
-        }
-    }
-    document.querySelector(".comments__textbox--name").value = "";
-    document.querySelector(".comments__textbox--comment").value = "";
-}
-)
+// Display initial comments
+commentArray.forEach(comment => displayComments(comment));
 
 function formatTimeAgo(dateString) {
     const datePosted = new Date(dateString);
@@ -101,3 +73,29 @@ function formatTimeAgo(dateString) {
         return `${seconds} second${seconds !== 1 ? 's' : ''} ago`;
     }
 }
+
+let formCta = document.querySelector(".comments__textbox");
+
+formCta.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let nameText = e.target.nameText.value;
+    let commentText = e.target.commentText.value;
+
+    if (nameText && commentText) {
+        const currentDate = new Date().toISOString();
+        const newComment = {
+            name: nameText,
+            comment: commentText,
+            date: currentDate 
+        };
+
+        commentArray.unshift(newComment);
+
+        // Display the new comment at the top
+        displayComments(newComment);
+    }
+
+    e.target.nameText.value = "";
+    e.target.commentText.value = "";
+});
