@@ -1,3 +1,6 @@
+const url = "https:unit-2-project-api-25c1595833b2.herokuapp.com/";
+const apiKey = "3c6412bd-6a41-4e5b-b0ec-dd57c144bf86";
+
 const commentArray = [
     {
         name: "Victor Pinto",
