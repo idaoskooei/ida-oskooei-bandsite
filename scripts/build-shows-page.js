@@ -1,80 +1,75 @@
-const showsArray = [
-    {
-        date:"Mon Sept 09 2024",
-        venue:"Ronald Lane",
-        location:"San Francisco, CA"
-    },
-    {
-        date:"Tue Sept 17 2024",
-        venue:"Pier 3 East",
-        location:"San Francisco, CA"
-    },
-    {
-        date:"Sat Oct 12 2024",
-        venue:"View Lounge",
-        location:"San Francisco, CA"
-    },
-    {
-        date:"Sat Nov 16 2024",
-        venue:"Hyatt Agency",
-        location:"San Francisco, CA"
-    },
-    {
-        date:"Fri Nov 29 2024",
-        venue:"Moscow Center",
-        location:"San Francisco, CA"
-    },
-    {
-        date:"Wed Dec 18 2024",
-        venue:"Press Club",
-        location:"San Francisco, CA"
-    },
-];
-
+const url = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
+const apiKey ="3c6412bd-6a41-4e5b-b0ec-dd57c144bf86";
 const showsList = document.querySelector(".shows__container");
 
-function showsDisplay(showsArray) {
-    showsArray.forEach(show => {
-        let shows = document.createElement("li");
+async function displayShows(){
+    axios
+    .get(url + "showdates?api_key=" + apiKey)
+    .then(response => {
+        console.log(response.data);
+     let showsArray = response.data;   
+        showsArray.forEach((show) => {
+            let shows = document.createElement("li");
         shows.classList.add("shows__list");
 
-        // date
         let dividerDate = document.createElement("div");
-        dividerDate.classList.add("shows__list--label", "shows__list--hidden");
-        dividerDate.innerText = "DATE";
+        
+        let labelDate = document.createElement("label");
+        labelDate.classList.add("shows__list--label", "shows__list--hidden");
+        labelDate.innerText = "DATE";
+
         let dateContent = document.createElement("p");
         dateContent.classList.add("shows__list--demi");
-        dateContent.innerText = show.date;
+        dateContent.innerText = new Date (Number(show.date)).toDateString();
 
-        // venue
+        let lineBreak1 = document.createElement("br");
+
         let dividerVenue = document.createElement("div");
-        dividerVenue.classList.add("shows__list--label", "shows__list--hidden");
-        dividerVenue.innerText = "VENUE";
-        let venueContent = document.createElement("p");
-        venueContent.innerText = show.venue;
 
-        // location
+        let labelVenue = document.createElement("label");
+        labelVenue.classList.add("shows__list--label","shows__list--hidden");
+        labelVenue.innerText = "VENUE";
+
+        let venueContent = document.createElement("p");
+        venueContent.innerText = show.place;
+
+        let lineBreak2 = document.createElement("br");
+
         let dividerLocation = document.createElement("div");
-        dividerLocation.classList.add("shows__list--label", "shows__list--hidden");
-        dividerLocation.innerText = "LOCATION";
+
+        let labelLocation = document.createElement("label");
+        labelLocation.classList.add("shows__list--label", "shows__list--hidden");
+        labelLocation.innerText = "LOCATION";
+
         let locationContent = document.createElement("p");
         locationContent.innerText = show.location;
 
-        // button
+        let lineBreak3 = document.createElement("br");
+
         let button = document.createElement("button");
         button.classList.add("shows__list--button");
         button.innerText = "BUY TICKETS";
 
-        shows.appendChild(dividerDate);
-        shows.appendChild(dateContent);
-        shows.appendChild(dividerVenue);
-        shows.appendChild(venueContent);
-        shows.appendChild(dividerLocation);
-        shows.appendChild(locationContent);
-        shows.appendChild(button);
 
         showsList.appendChild(shows);
+        shows.appendChild(dividerDate);
+        dividerDate.appendChild(labelDate);
+        dividerDate.appendChild(dateContent);
+        shows.appendChild(lineBreak1);
+        shows.appendChild(dividerVenue);
+        dividerVenue.appendChild(labelVenue);
+        dividerVenue.appendChild(venueContent);
+        shows.appendChild(lineBreak2);
+        shows.appendChild(dividerLocation);
+        dividerLocation.appendChild(labelLocation);
+        dividerLocation.appendChild(locationContent);
+        shows.appendChild(lineBreak3);
+        shows.appendChild(button);
+        });
+    })
+    .catch(err => {
+        console.log(err);
     });
 }
 
-showsDisplay(showsArray);
+displayShows();

@@ -24,10 +24,10 @@ class BandSiteApi {
   
     async getShows() {
       try {
-        const response = await axios.get(`${this.baseUrl}shows?api_key=${this.apiKey}`);
-        return response.data;
+          const response = await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
+          return response.data;
       } catch (error) {
-        console.error('Error getting shows:', error);
+          console.error('Error getting shows:', error);
       }
-    }
+  }
   }
