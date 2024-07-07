@@ -318,7 +318,8 @@ a {
   font-size: 0.8125rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem; // Add gap between elements
+  gap: 1rem; 
+  cursor: pointer; 
 }
 
 .shows__list:hover {
