@@ -44,7 +44,7 @@ a {
   font-size: 0.875rem;
   margin: 0;
   width: 100%;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .nav__listlink {
@@ -65,29 +65,27 @@ a {
   border-bottom: 5px solid #fff;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .menu {
-    background-color: #323232;
     display: flex;
     align-items: center;
     padding: 0 2.25rem;
   }
   .menu__logo {
-    width: 7.5rem;
     padding-top: 0;
     margin-right: 4rem;
   }
   .nav__list {
-    padding: 1rem 0rem 0rem;
+    padding: 1rem 0 0;
   }
   .nav__list-link-item {
     padding-top: 0.25rem;
     margin-right: 2.25rem;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .menu {
-    padding: 0rem 7.5rem;
+    padding: 0 7.5rem;
   }
   .menu__logo {
     margin-right: 2.5rem;
@@ -135,32 +133,23 @@ a {
   font-family: avenir-demi;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .footer {
-    background-color: #323232;
-    color: #ffffff;
     padding: 2.25rem;
     position: relative;
   }
   .footer__title {
     padding-bottom: 2.25rem;
-    font-family: avenir-demi;
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding-right: 1.5rem;
   }
   .footer__band-logo {
-    padding: 2rem 0 1rem;
     position: absolute;
     top: 1rem;
     right: 2.25rem;
   }
-  .footer__copyright {
-    font-family: avenir-regular;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-  }
-  .footer .footer__logo {
+  .footer__logo {
     padding-bottom: 1.5rem;
     padding-left: 0.5rem;
   }
@@ -169,20 +158,14 @@ a {
     align-items: center;
   }
   .footer__contact-container {
-    font-family: avenir-regular;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
     display: flex;
   }
   .footer__contact-container--agents {
     padding-bottom: 2.25rem;
     padding-right: 2.25rem;
   }
-  .footer__contact-container--demi {
-    font-family: avenir-demi;
-  }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .footer {
     padding: 2.25rem 7.5rem;
   }
@@ -205,7 +188,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
 }
 
 .hero__sub-header {
@@ -228,15 +211,12 @@ a {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .hero {
     height: 30rem;
-    width: 100%;
     padding-left: 2.25rem;
   }
   .hero__title {
-    font-family: avenir-demi;
-    color: #ffffff;
     font-size: 3.75rem;
     line-height: 4.25rem;
     width: 34rem;
@@ -246,9 +226,8 @@ a {
     width: 60%;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .hero {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -287,7 +266,7 @@ a {
 
 .shows__container {
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .shows__list {
@@ -295,6 +274,9 @@ a {
   border-bottom: 1px solid #e1e1e1;
   font-family: avenir-regular;
   font-size: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .shows__list:hover {
@@ -327,7 +309,7 @@ a {
   border: 0;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .shows {
     padding: 2.25rem;
   }
@@ -342,7 +324,7 @@ a {
     color: #afafaf;
   }
   .shows__list {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-size: 0.875rem;
@@ -355,7 +337,7 @@ a {
     display: none;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .shows {
     padding-left: 7.5rem;
   }
@@ -368,6 +350,6 @@ a {
   }
   .shows__label {
     padding-left: 11rem;
-    padding-top: 0px;
+    padding-top: 0;
   }
-} /*# sourceMappingURL=shows.css.map */
+}/*# sourceMappingURL=shows.css.map */

@@ -20,8 +20,6 @@ async function displayShows() {
             dateContent.classList.add("shows__list--demi");
             dateContent.innerText = new Date(Number(show.date)).toDateString();
 
-            let lineBreak1 = document.createElement("br");
-
             let dividerVenue = document.createElement("div");
 
             let labelVenue = document.createElement("label");
@@ -30,8 +28,6 @@ async function displayShows() {
 
             let venueContent = document.createElement("p");
             venueContent.innerText = show.place;
-
-            let lineBreak2 = document.createElement("br");
 
             let dividerLocation = document.createElement("div");
 
@@ -42,8 +38,6 @@ async function displayShows() {
             let locationContent = document.createElement("p");
             locationContent.innerText = show.location;
 
-            let lineBreak3 = document.createElement("br");
-
             let button = document.createElement("button");
             button.classList.add("shows__list--button");
             button.innerText = "BUY TICKETS";
@@ -52,15 +46,12 @@ async function displayShows() {
             shows.appendChild(dividerDate);
             dividerDate.appendChild(labelDate);
             dividerDate.appendChild(dateContent);
-            shows.appendChild(lineBreak1);
             shows.appendChild(dividerVenue);
             dividerVenue.appendChild(labelVenue);
             dividerVenue.appendChild(venueContent);
-            shows.appendChild(lineBreak2);
             shows.appendChild(dividerLocation);
             dividerLocation.appendChild(labelLocation);
             dividerLocation.appendChild(locationContent);
-            shows.appendChild(lineBreak3);
             shows.appendChild(button);
         });
     } catch (error) {
