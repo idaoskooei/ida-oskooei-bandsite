@@ -21,13 +21,15 @@ class BandSiteApi {
         console.error('Error getting comments:', error);
       }
     }
-  
+
     async getShows() {
       try {
           const response = await axios.get(`${this.baseUrl}showdates?api_key=${this.apiKey}`);
-          return response.data;
+          console.log('API response:', response.data);
+          return response.data
       } catch (error) {
           console.error('Error getting shows:', error);
+          throw error; 
       }
   }
   }
